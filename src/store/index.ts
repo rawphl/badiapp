@@ -55,14 +55,7 @@ export const useBadis: () => BadiHookReturnValue = () => {
                 setIsLoading(false)
             }
         }
-        if(navigator.onLine) {
-            load()
-        } else {
-            const badis = localStorage.getItem(BADIS_KEY)
-            if(badis !== null) {
-                setBadis(JSON.parse(badis))
-            }
-        }
+        load()
     }, [])
 
     useEffect(() => {
